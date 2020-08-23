@@ -1,14 +1,14 @@
 #takes in as input txt file from DP3P3 genotype information downloaded from flypop genome browser and converts genotype ID's such that 1=non-reference allele and 0=reference allele
-#neccessary as N's are included as sometimes 0/1/2 in the original vcf's which messes up downstream calculations of LD or nucleotide diversity
+#neccessary as N's are included as 0/1/2 in the original vcf's which messes up downstream calculations of LD or nucleotide diversity
 
-#provide files for input here
-#format must include first column alt elleles, second column chromosome, third position, other columns numeric genotypes of all individuals e.g.
+#format must include first column alt alleles, second column chromosome, third column position of SNP, other columns numeric genotypes of all individuals e.g.
+#N,A     2L      8203    1       0       0       0       0       0       2       0 
 #will convert N alleles to blank spaces, treating them as NA's in further analyses
 #converts ref/alt alleles to 0/1 if necessary
 #need to provide /tmp directory to write intermediate files
 #might also need to sort final file by coordinates for certain downstream analyses
-#N,A     2L      8203    1       0       0       0       0       0       2       0 
 
+#provide files for input here
 for ind in  ../ZI_snpeff_SYN_gts
 do
 
